@@ -1,4 +1,14 @@
 
-public class HelloWorldService {
-
+import javax.servlet.http.HttpServlet;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+@Path("/hello")
+public class HelloWorldService extends HttpServlet{
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String sayHello() {
+        return "Hello Jersey";
+    }
 }
