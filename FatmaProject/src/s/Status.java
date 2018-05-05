@@ -1,7 +1,9 @@
 package s;
 
 import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlRootElement;
+
 @XmlRootElement
 public class Status implements Serializable {
     private static final long serialVersionUID = -9130603850117689481L;
