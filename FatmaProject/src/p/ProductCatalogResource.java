@@ -17,23 +17,10 @@ import s.Status;
 
 public class ProductCatalogResource {
 
-private static List<Product> productCatalog = new ArrayList<Product>();
-	
+	private static List<Product> productCatalog = new ArrayList<Product>();
 
 	public ProductCatalogResource() {
-		if (productCatalog == null) {
-			productCatalog = new ArrayList<Product>();
-			productCatalog.add(new Product(1, "Keyboard", "Electronics", 29.99D));
-			productCatalog.add(new Product(2, "Mouse", "Electronics", 9.95D));
-			productCatalog.add(new Product(3, "17\" Monitor", "Electronics", 159.49D));
-			productCatalog.add(new Product(4, "Hammer", "Hardware", 9.95D));
-			productCatalog.add(new Product(5, "Screwdriver", "Hardware", 7.95D));
-			productCatalog.add(new Product(6, "English Dictionary", "Books", 11.39D));
-			productCatalog.add(new Product(7, "A House in Bali", "Books", 15.99D));
-			productCatalog.add(new Product(8, "An Alaskan Odyssey", "Books", 799.99D));
-			productCatalog.add(new Product(9, "LCD Projector", "Electronics", 1199.19D));
-			productCatalog.add(new Product(10, "Smart Thermostat", "Electronics", 1199.19D));
-		}
+		initializeProductCatalog();
 	}
 
 	@GET
@@ -70,20 +57,20 @@ private static List<Product> productCatalog = new ArrayList<Product>();
 		productCatalog.add(product);
 		return new Status("SUCCESS", "Inserted " + product.getName());
 	}
-	// private void initializeProductCatalog() {
-	// if (productCatalog == null) {
-	// productCatalog = new ArrayList<Product>();
-	// productCatalog.add(new Product(1, "Keyboard", "Electronics", 29.99D));
-	// productCatalog.add(new Product(2, "Mouse", "Electronics", 9.95D));
-	// productCatalog.add(new Product(3, "17\" Monitor", "Electronics", 159.49D));
-	// productCatalog.add(new Product(4, "Hammer", "Hardware", 9.95D));
-	// productCatalog.add(new Product(5, "Screwdriver", "Hardware", 7.95D));
-	// productCatalog.add(new Product(6, "English Dictionary", "Books", 11.39D));
-	// productCatalog.add(new Product(7, "A House in Bali", "Books", 15.99D));
-	// productCatalog.add(new Product(8, "An Alaskan Odyssey", "Books", 799.99D));
-	// productCatalog.add(new Product(9, "LCD Projector", "Electronics", 1199.19D));
-	// productCatalog.add(new Product(10, "Smart Thermostat", "Electronics",
-	// 1199.19D));
-	// }
-	// }
+
+	private void initializeProductCatalog() {
+		if (productCatalog == null) {
+			productCatalog = new ArrayList<Product>();
+			productCatalog.add(new Product(1, "Keyboard", "Electronics", 29.99D));
+			productCatalog.add(new Product(2, "Mouse", "Electronics", 9.95D));
+			productCatalog.add(new Product(3, "17\" Monitor", "Electronics", 159.49D));
+			productCatalog.add(new Product(4, "Hammer", "Hardware", 9.95D));
+			productCatalog.add(new Product(5, "Screwdriver", "Hardware", 7.95D));
+			productCatalog.add(new Product(6, "English Dictionary", "Books", 11.39D));
+			productCatalog.add(new Product(7, "A House in Bali", "Books", 15.99D));
+			productCatalog.add(new Product(8, "An Alaskan Odyssey", "Books", 799.99D));
+			productCatalog.add(new Product(9, "LCD Projector", "Electronics", 1199.19D));
+			productCatalog.add(new Product(10, "Smart Thermostat", "Electronics", 1199.19D));
+		}
+	}
 }
